@@ -1,0 +1,5 @@
+                    JAVASCRIPT
+- Need random number from 1-4
+- Need an array to push random numbers into. 
+- Random number will correspond to which box should light up. 
+- Need a way to check if user input is the same as the array
