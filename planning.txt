@@ -1,8 +1,14 @@
                     JAVASCRIPT
-- Need random number from 1-4
+- Need random number function from 1-4
 - Need an array to push random numbers into. 
 - Random number will correspond to which box should light up. 
 - Need a way to check if user input is the same as the array
 - Need a way to initialize the game 
 - Need to make a big pause so the user can put in their input without code running (a button would work)
 - Need to make a simple animation so the user can confirm they have clicked the intended square
+- Need event listeners for my '.flexbox-container' div
+    - if(event.target === a certain button) {
+        push that buttons's respective number into the player array
+    }
+- Need event listener for '.start-btn'
+- Need event listener for '.about'
