@@ -3,3 +3,6 @@
 - Need an array to push random numbers into. 
 - Random number will correspond to which box should light up. 
 - Need a way to check if user input is the same as the array
+- Need a way to initialize the game 
+- Need to make a big pause so the user can put in their input without code running (a button would work)
+- Need to make a simple animation so the user can confirm they have clicked the intended square
