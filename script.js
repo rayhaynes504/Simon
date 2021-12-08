@@ -7,7 +7,7 @@ function getRandomNumber(min, max) {
 }
 
 /*----- app's state (variables) -----*/
-let compSequence = [];
+let compSequence = [1, 2, 3, 4, 4, 3, 2, 1];
 let playerSequence = [];
 /*----- cached element references -----*/
 const flexboxContainerEl = document.querySelector('.flexbox-container');
@@ -27,11 +27,70 @@ const rstBtn = document.querySelector('#rst-btn');
 const aboutEl = document.querySelector('.about');
 
 /*----- event listeners -----*/
-//  flexboxContainerEl.addEventListener('click', )
+flexboxContainerEl.addEventListener('click', Highlight);
 // strtBtn.addEventListener('click', )
 // aboutEl.addEventListener('click', )
 /*----- functions -----*/
-// Need fucntion to push random number into an array after each correct sequence response.
+// function to make clicked button flash
+function Highlight(event) {
+	event.target.style.filter = 'brightness(200%)';
+	setTimeout(function () {
+		event.target.style.filter = 'brightness(100%)';
+	}, 350);
+}
+
+// function to push random number into computer's array.
+function addNumberToComp() {
+	compSequence.push(getRandomNumber(1, 4));
+}
+// Need function to display compSequence array
+
+// function displayCompSequence() {setInterval(function(){
+// 	for (let i = 0; i < compSequence.length; i++) {
+
+// 		if (compSequence[i] === 1) {
+// 			highlightBox(box1El);
+// 		}
+// 		if (compSequence[i] === 2) {
+// 			highlightBox(box2El);
+// 		}
+// 		if (compSequence[i] === 3) {
+// 			highlightBox(box3El);
+// 		}
+// 		if (compSequence[i] === 4) {
+// 			highlightBox(box4El);
+//         };
+// 	}}, 1000);
+// }
+
+function displayCompSequence() {
+	for (let i = 0; i < compSequence.length; i++) {
+		setTimeout(() => {
+			if (compSequence[i] === 1) {
+				highlightBox(box1El);
+			}
+			if (compSequence[i] === 2) {
+				highlightBox(box2El);
+			}
+			if (compSequence[i] === 3) {
+				highlightBox(box3El);
+			}
+			if (compSequence[i] === 4) {
+				highlightBox(box4El);
+			}
+		}, 1000 * i);
+	}
+}
+displayCompSequence();
+
+//function to highlight button from array
+function highlightBox(boxElement) {
+	boxElement.style.filter = 'brightness(200%)';
+	setTimeout(function () {
+		boxElement.style.filter = 'brightness(100%)';
+	}, 500);
+}
+
 //Need a way to initialize the game
 //Need a way to check if user input is the same as the array
 // Declare a winner.
@@ -71,12 +130,3 @@ const aboutEl = document.querySelector('.about');
 // 		box1El.style.filter = 'brightness(100%)';
 // 	}, 350);
 // });
-
-function clickHighlight(event) {
-	event.target.style.filter = 'brightness(200%)';
-	setTimeout(function () {
-		event.target.style.filter = 'brightness(100%)';
-	}, 350);
-}
-
-flexboxContainerEl.addEventListener('click', clickHighlight);
