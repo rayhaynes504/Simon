@@ -3,14 +3,14 @@
 }
 body {
 	background-color: aqua;
-	/* border: 3px solid white; */
 }
 h1 {
 	font-family: 'Fuzzy Bubbles', cursive;
 	text-align: center;
 	font-size: 300%;
-	height: 3em;
+	height: 2em;
 	padding-top: 0.7em;
+	/* background-color: red; */
 }
 .flexbox-container {
 	/* background-color: red; */
@@ -38,11 +38,11 @@ h1 {
 #flexbox-item4 {
 	background-color: gold;
 }
-.start-div {
+.start-reset-div {
 	text-align: center;
 	margin-top: 3em;
 }
-.start-btn {
+.btns {
 	font-size: 1.7em;
 }
 p {
