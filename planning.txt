@@ -12,7 +12,11 @@
     }
 - Need event listener for '.start-btn'
 - Need event listener for '.about'
-
+- set timeout and set delay
+- get button to lightup when the user clicks on them
+- add CSS class to brighten up lights on click
+    - filter property for brightness
+- going to need setTimeout and setDelay
 
                 GAMEFLOW
 

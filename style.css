@@ -30,10 +30,11 @@ h1 {
 	background-color: red;
 }
 #flexbox-item2 {
-	background-color: blue;
+	background-color:cornflowerblue;
 }
 #flexbox-item3 {
 	background-color: green;
+	filter: brightness(100%);
 }
 #flexbox-item4 {
 	background-color: gold;
@@ -44,6 +45,7 @@ h1 {
 }
 .btns {
 	font-size: 1.7em;
+	border-radius: 0.25em;
 }
 p {
 	font-family: 'Fuzzy Bubbles', cursive;
