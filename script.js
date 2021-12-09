@@ -1,11 +1,4 @@
-// console.log('lets go');
-
 /*----- constants -----*/
-
-// From Space Battles
-function getRandomNumber(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
 /*----- app's state (variables) -----*/
 
@@ -21,7 +14,9 @@ const box4El = document.querySelector('#flexbox-item4');
 const compareBtn = document.querySelector('#compare-btn');
 const strtBtn = document.querySelector('#strt-btn');
 const rstBtn = document.querySelector('#rst-btn');
-const aboutEl = document.querySelector('.about');
+const aboutBtn = document.querySelector('#about-game');
+const modalEl = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
 
 /*----- event listeners -----*/
 
@@ -29,8 +24,8 @@ flexboxContainerEl.addEventListener('click', Highlight);
 strtBtn.addEventListener('click', startGame);
 rstBtn.addEventListener('click', init);
 compareBtn.addEventListener('click', compareSequences);
-
-// aboutEl.addEventListener('click', )
+aboutBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
 
 /*----- functions -----*/
 
@@ -41,41 +36,33 @@ function init() {
 	addNumberToComp();
 }
 init();
-
+// setTimeout(openModal, 5000);
 // function to start game
 function startGame() {
 	//Get ready modal would be nice...stretch
 	displayCompSequence();
-	console.log(compSequence);
 }
-// function to push players input into their array
-function gatherPlayersSequence() {
-	console.log('box one');
-}
+
 // function to push random number into computer's array.
 function addNumberToComp() {
 	compSequence.push(getRandomNumber(1, 4));
 }
+
 // function to display compSequence array
 function displayCompSequence() {
 	for (let i = 0; i < compSequence.length; i++) {
 		setTimeout(() => {
 			if (compSequence[i] === 1) {
 				highlightBox(box1El);
-
-				console.log(compSequence);
 			}
 			if (compSequence[i] === 2) {
 				highlightBox(box2El);
-				console.log(compSequence);
 			}
 			if (compSequence[i] === 3) {
 				highlightBox(box3El);
-				console.log(compSequence);
 			}
 			if (compSequence[i] === 4) {
 				highlightBox(box4El);
-				console.log(compSequence);
 			}
 		}, 1000 * i);
 	}
@@ -114,6 +101,19 @@ function compareSequences() {
 		//If yes, hit start button to display the same sequence again.
 		// If no, initialize the game.
 	}
+}
+
+// From Space Battles
+function getRandomNumber(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function openModal() {
+	modalEl.style.display = 'block';
+}
+
+function closeModal() {
+	modalEl.style.display = 'none';
 }
 
 /*----- game logic -----*/

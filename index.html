@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<h1>SIMON</h1>
-
+		<h3></h3>
 		<div class="flexbox-container">
 			<div class="flexbox-item" id="flexbox-item1" data-box-number="1"></div>
 			<div class="flexbox-item" id="flexbox-item2" data-box-number="2"></div>
@@ -30,7 +30,35 @@
 			<button class="btns" id="strt-btn">Start</button>
 			<button class="btns" id="rst-btn">Reset</button>
 		</div>
-		<p class="about">About Game</p>
+		<div class="about">
+			<button id="about-game">About Game</button>
+		</div>
+		<div id="modal">
+			<div id="modal-textbox">
+				<h1 class="about.h1">About Simon</h1>
+				<p>
+					Simon is an electronic game of memory skill invented by Ralph H. Baer
+					and Howard J. Morrison, working for toy design firm Marvin Glass and
+					Associates, with software programming by Lenny Cope. This is my
+					rendition of their game.
+					<!-- https://en.wikipedia.org/wiki/Simon_(game) -->
+				</p>
+				<h2 class="about-h2">How to play</h2>
+				<p>
+					Press the start button to begin the game. The game will display a
+					sequence of flashing lights the user has to repeat. Once the user has
+					repeated the sequence, click the "Compare" button to see if the
+					sequence was repeated accurately. If the user successfully repeats the
+					sequence, the game will generate a tougher (longer) sequence for the
+					user to repeat. Press the start button again to display the new
+					sequence. This process is repeated until the user incorrectly repeats
+					a sequence, then the game is over.
+				</p>
+				<div id="modal-footer">
+					<a id="close" href="#">Close</a>
+				</div>
+			</div>
+		</div>
 		<script src="./script.js"></script>
 	</body>
 </html>
