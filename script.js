@@ -46,6 +46,7 @@ init();
 function startGame() {
 	//Get ready modal would be nice...stretch
 	displayCompSequence();
+	console.log(compSequence);
 }
 // function to push players input into their array
 function gatherPlayersSequence() {
@@ -90,7 +91,7 @@ function Highlight(event) {
 	playerSequence.push(parseInt(event.target.dataset.boxNumber));
 }
 
-//function to highlight button from array
+//function to highlight button from computer array
 function highlightBox(boxElement) {
 	boxElement.style.filter = 'brightness(200%)';
 	setTimeout(function () {
@@ -99,16 +100,19 @@ function highlightBox(boxElement) {
 }
 
 // Function to compare sequences
-function compareSequences(event) {
-	// event.preventDefault();
+function compareSequences() {
 	console.log(playerSequence.toString());
 	console.log(compSequence.toString());
 	if (playerSequence.toString() === compSequence.toString()) {
 		addNumberToComp();
+		playerSequence = [];
 		console.log('you win');
 		console.log(compSequence);
 	} else {
 		console.log('you lose');
+		// prompt if they want to retry.
+		//If yes, hit start button to display the same sequence again.
+		// If no, initialize the game.
 	}
 }
 
