@@ -39,6 +39,13 @@ h1 {
 #flexbox-item4 {
 	background-color: gold;
 }
+.compare-div {
+	text-align: center;
+	margin: 2em;
+
+}
+.compare-btn {
+}
 .start-reset-div {
 	text-align: center;
 	margin-top: 3em;
@@ -46,6 +53,7 @@ h1 {
 .btns {
 	font-size: 1.7em;
 	border-radius: 0.25em;
+	font-family: 'Fuzzy Bubbles', cursive;
 }
 p {
 	font-family: 'Fuzzy Bubbles', cursive;

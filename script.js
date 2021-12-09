@@ -9,24 +9,18 @@ function getRandomNumber(min, max) {
 
 /*----- app's state (variables) -----*/
 
-let compSequence = [1, 2, 3, 4, 4, 3, 2, 1];
+let compSequence = [];
 let playerSequence = [];
 /*----- cached element references -----*/
 
 const flexboxContainerEl = document.querySelector('.flexbox-container');
-
 const box1El = document.querySelector('#flexbox-item1');
-
 const box2El = document.querySelector('#flexbox-item2');
-
 const box3El = document.querySelector('#flexbox-item3');
-
 const box4El = document.querySelector('#flexbox-item4');
-
+const compareBtn = document.querySelector('#compare-btn');
 const strtBtn = document.querySelector('#strt-btn');
-
 const rstBtn = document.querySelector('#rst-btn');
-
 const aboutEl = document.querySelector('.about');
 
 /*----- event listeners -----*/
@@ -34,6 +28,8 @@ const aboutEl = document.querySelector('.about');
 flexboxContainerEl.addEventListener('click', Highlight);
 strtBtn.addEventListener('click', startGame);
 rstBtn.addEventListener('click', init);
+compareBtn.addEventListener('click', compareSequences);
+
 // aboutEl.addEventListener('click', )
 
 /*----- functions -----*/
@@ -44,7 +40,6 @@ function init() {
 	playerSequence = [];
 	addNumberToComp();
 }
-
 init();
 
 // function to start game
@@ -66,15 +61,20 @@ function displayCompSequence() {
 		setTimeout(() => {
 			if (compSequence[i] === 1) {
 				highlightBox(box1El);
+
+				console.log(compSequence);
 			}
 			if (compSequence[i] === 2) {
 				highlightBox(box2El);
+				console.log(compSequence);
 			}
 			if (compSequence[i] === 3) {
 				highlightBox(box3El);
+				console.log(compSequence);
 			}
 			if (compSequence[i] === 4) {
 				highlightBox(box4El);
+				console.log(compSequence);
 			}
 		}, 1000 * i);
 	}
@@ -87,8 +87,7 @@ function Highlight(event) {
 		event.target.style.filter = 'brightness(100%)';
 	}, 350);
 	// Take whatever is clicked and push into player array
-	playerSequence.push(event.target.dataset.boxNumber);
-    console.log(playerSequence)
+	playerSequence.push(parseInt(event.target.dataset.boxNumber));
 }
 
 //function to highlight button from array
@@ -99,12 +98,21 @@ function highlightBox(boxElement) {
 	}, 500);
 }
 
-/*----- game logic -----*/
-if (compSequence === playerSequence) {
-	addNumberToComp;
-} else {
-	console.log('you lose');
+// Function to compare sequences
+function compareSequences(event) {
+	// event.preventDefault();
+	console.log(playerSequence.toString());
+	console.log(compSequence.toString());
+	if (playerSequence.toString() === compSequence.toString()) {
+		addNumberToComp();
+		console.log('you win');
+		console.log(compSequence);
+	} else {
+		console.log('you lose');
+	}
 }
+
+/*----- game logic -----*/
 
 //Need a way to check if user input is the same as the array
 // Declare a winner.
