@@ -126,37 +126,3 @@ function openModal() {
 function closeModal() {
 	modalEl.style.display = 'none';
 }
-
-/*----- game logic -----*/
-
-//Need a way to check if user input is the same as the array
-// Declare a winner.
-// function checkForMatch {
-//     if (compSequence === playerSequence) {
-//         congrats and continue prompt;
-//     if (player continues) {
-//         empty playerSequence Array;
-//         push getRandomNumber(1, 4) into compSequence;
-//     display compSequence;
-// receive playerSequence}
-//     }
-// } else {
-//     return try again prompt
-// }
-// Game flow
-// click handler to start game
-// make compSequence;
-// display compSequence;
-// receive playerSequence;
-// compare sequences;
-// if (sequencesmatch) {
-//     congrats, continue? prompt;
-//     if (continue === 'yes') {
-//     empty player sequence;
-//     add another element in compSequence;
-//     } else {
-//         return alert thanks for playing
-//     }
-// } else {
-//     alert you guessed incorrectly. Thanks for playing.
-// }
