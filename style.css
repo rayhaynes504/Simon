@@ -12,6 +12,16 @@ h1 {
 	padding-top: 0.7em;
 	/* background-color: red; */
 }
+.game-alerts {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 2.5em;
+	font-family: 'Fuzzy Bubbles', cursive;
+	/* visibility: hidden; */
+}
+p.game-alerts {
+	font-size: 2em;
+}
 .flexbox-container {
 	/* background-color: red; */
 	height: 30em;

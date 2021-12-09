@@ -17,6 +17,7 @@ const rstBtn = document.querySelector('#rst-btn');
 const aboutBtn = document.querySelector('#about-game');
 const modalEl = document.getElementById('modal');
 const closeBtn = document.getElementById('close');
+const gameAlertsEls = document.querySelectorAll('.game-alerts');
 
 /*----- event listeners -----*/
 
@@ -34,12 +35,17 @@ function init() {
 	compSequence = [];
 	playerSequence = [];
 	addNumberToComp();
+	gameAlertsEls[0].style.visibility = 'hidden';
+	gameAlertsEls[1].style.visibility = 'hidden';
 }
 init();
 // setTimeout(openModal, 5000);
 // function to start game
 function startGame() {
 	//Get ready modal would be nice...stretch
+	playerSequence = [];
+	gameAlertsEls[0].style.visibility = 'hidden';
+	gameAlertsEls[1].style.visibility = 'hidden';
 	displayCompSequence();
 }
 
@@ -88,18 +94,18 @@ function highlightBox(boxElement) {
 
 // Function to compare sequences
 function compareSequences() {
-	console.log(playerSequence.toString());
-	console.log(compSequence.toString());
 	if (playerSequence.toString() === compSequence.toString()) {
 		addNumberToComp();
-		playerSequence = [];
-		console.log('you win');
-		console.log(compSequence);
+
+		gameAlertsEls[0].innerText = 'Correct!';
+		gameAlertsEls[1].innerText = 'Click Start Button For Next Level';
+		gameAlertsEls[0].style.visibility = 'visible';
+		gameAlertsEls[1].style.visibility = 'visible';
 	} else {
-		console.log('you lose');
-		// prompt if they want to retry.
-		//If yes, hit start button to display the same sequence again.
-		// If no, initialize the game.
+		gameAlertsEls[0].innerText = 'You lose 😞';
+		gameAlertsEls[1].innerText = 'Click Start Button To Retry';
+		gameAlertsEls[0].style.visibility = 'visible';
+		gameAlertsEls[1].style.visibility = 'visible';
 	}
 }
 
