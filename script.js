@@ -1,15 +1,18 @@
 // console.log('lets go');
 
 /*----- constants -----*/
+
 // From Space Battles
 function getRandomNumber(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /*----- app's state (variables) -----*/
+
 let compSequence = [1, 2, 3, 4, 4, 3, 2, 1];
 let playerSequence = [];
 /*----- cached element references -----*/
+
 const flexboxContainerEl = document.querySelector('.flexbox-container');
 
 const box1El = document.querySelector('#flexbox-item1');
@@ -27,42 +30,37 @@ const rstBtn = document.querySelector('#rst-btn');
 const aboutEl = document.querySelector('.about');
 
 /*----- event listeners -----*/
+
 flexboxContainerEl.addEventListener('click', Highlight);
-// strtBtn.addEventListener('click', )
+strtBtn.addEventListener('click', startGame);
+rstBtn.addEventListener('click', init);
 // aboutEl.addEventListener('click', )
+
 /*----- functions -----*/
-// function to make clicked button flash
-function Highlight(event) {
-	event.target.style.filter = 'brightness(200%)';
-	setTimeout(function () {
-		event.target.style.filter = 'brightness(100%)';
-	}, 350);
+
+// function to initialize the game
+function init() {
+	compSequence = [];
+	playerSequence = [];
+	addNumberToComp();
 }
 
+init();
+
+// function to start game
+function startGame() {
+	//Get ready modal would be nice...stretch
+	displayCompSequence();
+}
+// function to push players input into their array
+function gatherPlayersSequence() {
+	console.log('box one');
+}
 // function to push random number into computer's array.
 function addNumberToComp() {
 	compSequence.push(getRandomNumber(1, 4));
 }
-// Need function to display compSequence array
-
-// function displayCompSequence() {setInterval(function(){
-// 	for (let i = 0; i < compSequence.length; i++) {
-
-// 		if (compSequence[i] === 1) {
-// 			highlightBox(box1El);
-// 		}
-// 		if (compSequence[i] === 2) {
-// 			highlightBox(box2El);
-// 		}
-// 		if (compSequence[i] === 3) {
-// 			highlightBox(box3El);
-// 		}
-// 		if (compSequence[i] === 4) {
-// 			highlightBox(box4El);
-//         };
-// 	}}, 1000);
-// }
-
+// function to display compSequence array
 function displayCompSequence() {
 	for (let i = 0; i < compSequence.length; i++) {
 		setTimeout(() => {
@@ -81,7 +79,17 @@ function displayCompSequence() {
 		}, 1000 * i);
 	}
 }
-displayCompSequence();
+
+// function to make clicked button flash
+function Highlight(event) {
+	event.target.style.filter = 'brightness(200%)';
+	setTimeout(function () {
+		event.target.style.filter = 'brightness(100%)';
+	}, 350);
+	// Take whatever is clicked and push into player array
+	playerSequence.push(event.target.dataset.boxNumber);
+    console.log(playerSequence)
+}
 
 //function to highlight button from array
 function highlightBox(boxElement) {
@@ -91,7 +99,13 @@ function highlightBox(boxElement) {
 	}, 500);
 }
 
-//Need a way to initialize the game
+/*----- game logic -----*/
+if (compSequence === playerSequence) {
+	addNumberToComp;
+} else {
+	console.log('you lose');
+}
+
 //Need a way to check if user input is the same as the array
 // Declare a winner.
 // function checkForMatch {
@@ -123,10 +137,3 @@ function highlightBox(boxElement) {
 // } else {
 //     alert you guessed incorrectly. Thanks for playing.
 // }
-
-// box1El.addEventListener('click', function (event) {
-// 	box1El.style.filter = 'brightness(200%)';
-// 	setTimeout(function () {
-// 		box1El.style.filter = 'brightness(100%)';
-// 	}, 350);
-// });
