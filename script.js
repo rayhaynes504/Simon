@@ -4,6 +4,8 @@
 
 let compSequence = [];
 let playerSequence = [];
+let currentLevel = compSequence.length;
+
 /*----- cached element references -----*/
 
 const flexboxContainerEl = document.querySelector('.flexbox-container');
@@ -18,6 +20,7 @@ const aboutBtn = document.querySelector('#about-game');
 const modalEl = document.getElementById('modal');
 const closeBtn = document.getElementById('close');
 const gameAlertsEls = document.querySelectorAll('.game-alerts');
+const levelEl = document.querySelector('#level-indicator');
 
 /*----- event listeners -----*/
 
@@ -39,7 +42,7 @@ function init() {
 	gameAlertsEls[1].style.visibility = 'hidden';
 }
 init();
-// setTimeout(openModal, 5000);
+setTimeout(openModal, 3000);
 // function to start game
 function startGame() {
 	//Get ready modal would be nice...stretch
@@ -52,6 +55,8 @@ function startGame() {
 // function to push random number into computer's array.
 function addNumberToComp() {
 	compSequence.push(getRandomNumber(1, 4));
+	currentLevel = compSequence.length;
+	levelEl.innerText = `Level: ${currentLevel}`;
 }
 
 // function to display compSequence array
