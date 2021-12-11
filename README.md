@@ -52,7 +52,7 @@ Simon is a game of memory where a sequence of colors are displayed and the user 
 
 ### Gameplay Screen
 (these colors in the box will flash)
-![Gameplay Screen Wire Frame](./assets/gameplay-wireframe.jpg)
+![Gameplay Screen Wire Frame](assets/Gameplay-Wireframe.jpg)
 ### About Modal
 ![About Modal Wire Frame](./assets/about-modal-wireframe.jpg)
 
