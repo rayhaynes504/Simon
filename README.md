@@ -1,7 +1,7 @@
 # Project 1 - Simon
 
 ## App Screenshot
-￼
+
 
 ## Technologies Used
 - Visual Studio Code
@@ -49,13 +49,13 @@ Simon is a game of memory where a sequence of colors are displayed and the user 
 ## Wire Frames
 ### Welcome Page
 
-￼
+
 ### Gameplay Screen
 (these colors in the box will flash)
-￼
+
 ### About Modal
 
-￼
+
 
 
 
