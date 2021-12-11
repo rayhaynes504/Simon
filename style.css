@@ -20,7 +20,7 @@ h1 {
 	text-align: center;
 	font-size: 2.5em;
 	font-family: 'Fuzzy Bubbles', cursive;
-	/* visibility: hidden; */
+	visibility: hidden;
 }
 p.game-alerts {
 	font-size: 2em;
@@ -123,5 +123,12 @@ p.game-alerts {
 	}
 	.about {
 		margin-top: 2em;
+	}
+	.about-h1 {
+		height: 1.1em;
+		font-size: 2em;
+	}
+	.about-h2 {
+		margin-top: 1.5em;
 	}
 }
