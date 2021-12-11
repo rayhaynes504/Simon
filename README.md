@@ -48,7 +48,7 @@ Simon is a game of memory where a sequence of colors are displayed and the user 
 
 ## Wire Frames
 ### Welcome Page
-![Welcome Wire Frame](Assets/welcome-page-wireframe.jpg)
+![Welcome Wire Frame](Assets/Welcome-page-wireframe.jpg)
 
 ### Gameplay Screen
 (these colors in the box will flash)
