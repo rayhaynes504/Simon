@@ -111,7 +111,7 @@ p.game-alerts {
 	font-family: 'Fuzzy Bubbles', cursive;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 	h1 {
 		padding-top: 0rem;
 	}
